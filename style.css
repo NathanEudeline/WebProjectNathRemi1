@@ -20,6 +20,7 @@ nav {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    margin: 10px;
 }
 
 nav ol {
@@ -31,7 +32,7 @@ nav ol {
 }
 
 nav ol li {
-    padding: 5px;
+    padding: 15px;
     background-color: #2F3136;
 }
 nav ol li:hover {
@@ -50,27 +51,56 @@ nav ol li:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
-#text {
-    opacity: 0;
-    transition: opacity 300ms ease;
+#logo a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
-#logo img:hover #text {
-    opacity: 1;
 
+#left {
+    justify-content: flex-end;
 }
+
+#right {
+    justify-content: flex-start;
+}
+
 #logo img:hover {
     transform: scale(1.1);
 }
 
 .logoImg {
     border-radius: 100%;
-    width: 20%;
-    height: 20%;
-    background-color: #2F3136;
+    width: 30%;
+    height: 30%;
+    min-height: 50px;
+    min-width: 50px;
+    background-color: white;
 }
 
 .inv {
     color: white;
 }
+
+.rotate {
+    animation: rotation 8s infinite linear;
+    border-radius: 100%;
+    width: 30%;
+    height: 30%;
+    min-height: 50px;
+    min-width: 50px;
+    background-color: lightblue;
+    align-items: center;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg) scale(0);
+    }
+    to {
+      transform: rotate(359deg) scale(1);
+    }
+  }
