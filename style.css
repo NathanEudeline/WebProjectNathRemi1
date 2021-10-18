@@ -20,7 +20,6 @@ nav {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    margin: 10px;
 }
 
 nav ol {
@@ -62,10 +61,14 @@ nav ol li:hover {
 
 #left {
     justify-content: flex-end;
+    margin: 0;
+    padding: 0;
 }
 
 #right {
     justify-content: flex-start;
+    padding: 0;
+    margin: 0;
 }
 
 #logo img:hover {
@@ -78,8 +81,7 @@ nav ol li:hover {
     height: 30%;
     min-height: 50px;
     min-width: 50px;
-    background-color: white;
-}
+    background-color: white;}
 
 .inv {
     color: white;
@@ -93,6 +95,8 @@ nav ol li:hover {
     min-height: 50px;
     min-width: 50px;
     background-color: lightblue;
+    /* background: url('https://media.giphy.com/media/3BRDkVjKikYW4/giphy.gif'); */
+
     align-items: center;
   }
   
@@ -104,3 +108,32 @@ nav ol li:hover {
       transform: rotate(359deg) scale(1);
     }
   }
+
+#cache:hover #cache-content {
+    display: block;
+}
+
+#cache-content {
+    display: none;
+    z-index: 1;
+}
+
+#custom-bg {
+    background: url('http://vision.gel.ulaval.ca/~jflalonde/cours/1001/h17/tps/tp0/giphy.gif');
+}
+
+#instructions {
+    border: 2px solid #202225;
+    width: 90vw;
+    margin: 0 auto;
+    border-radius: 5px;
+    align-self: center;
+}
+
+#instructions legend {
+    margin-left: 20px;
+}
+
+#instructions p {
+    padding: 5px;
+}
