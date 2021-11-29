@@ -1,8 +1,21 @@
-* { padding: 0; margin: 0; font-family: Texturina,sans-serif; color: #8A8E92;}
+:root {
+    --back: #bce7fd;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    color: black;
+    list-style-position: inside;
+}
 
 body {
     display: flex;
     flex-direction: column;
+    background-color: var(--back);
 }
 
 header {
@@ -11,41 +24,62 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #202225;
+    /* background-color: #202225; */
 }
 
 nav {
-    display: flex;
-    width: 70%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
+    margin: 10px auto;
+    /* padding: 0; */
+    overflow: hidden;
+    display: table;
+    /* position: fixed; */
+    /* border-radius: 50px;
+    background-color: black; */
 }
 
-nav ol {
-    width: 60%;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    list-style: none;
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    /* width: max-content; */
 }
 
-nav ol li {
+nav ul li {
+    display: inline-block;
+    padding: 10px;
+}
+
+@media screen and (max-width: 650px) {
+    nav ul li {
+        display: block;
+        padding: 5px;
+    }
+}
+
+nav ul li a {
+    display: block;
+    color: whitesmoke;
     padding: 15px;
-    background-color: #2F3136;
-}
-nav ol li:hover {
-    animation: 500ms big;
-}
-@keyframes big {
-    from{
-        transform: scale(1);
-    }
-    to{
-        transform: scale(1.1);
-    }
+    text-decoration: none;
+    border-radius: 30px;
+    background-color: black;
+    transition: 500ms;
 }
 
+nav ul li a:hover {
+    background-color: whitesmoke;
+    color: black;
+    transform: scale(1.05);
+    transition-delay: 50ms;
+}
+
+nav ul li a:active {
+    transform: scale(0.995);
+}
+
+nav ul li a.lock:focus {
+    background-color: rgb(19, 189, 13);
+}
+/* 
 #logo {
     display: flex;
     justify-content: center;
@@ -53,7 +87,7 @@ nav ol li:hover {
     height: 100%;
 }
 
-#logo a{
+#logo a {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -81,13 +115,27 @@ nav ol li:hover {
     height: 30%;
     min-height: 50px;
     min-width: 50px;
-    background-color: white;}
+    background-color: white;
+} */
 
-.inv {
-    color: white;
+main {
+    margin: 60px;
 }
 
-.rotate {
+.inv {
+    color: var(--back);
+}
+
+.inv:hover {
+    color: black;
+}
+
+#page1 {
+    text-align: center;
+    font-size: 400%;
+}
+
+/* .rotate {
     animation: rotation 8s infinite linear;
     border-radius: 100%;
     width: 30%;
@@ -95,19 +143,18 @@ nav ol li:hover {
     min-height: 50px;
     min-width: 50px;
     background-color: lightblue;
-    /* background: url('https://media.giphy.com/media/3BRDkVjKikYW4/giphy.gif'); */
 
     align-items: center;
-  }
-  
-  @keyframes rotation {
+}
+
+@keyframes rotation {
     from {
-      transform: rotate(0deg) scale(0);
+        transform: rotate(0deg) scale(0);
     }
     to {
-      transform: rotate(359deg) scale(1);
+        transform: rotate(359deg) scale(1);
     }
-  }
+} */
 
 #cache:hover #cache-content {
     display: block;
@@ -119,13 +166,13 @@ nav ol li:hover {
 }
 
 #custom-bg {
-    background: url('http://vision.gel.ulaval.ca/~jflalonde/cours/1001/h17/tps/tp0/giphy.gif');
+    background: url("http://vision.gel.ulaval.ca/~jflalonde/cours/1001/h17/tps/tp0/giphy.gif");
 }
 
 #instructions {
     border: 2px solid #202225;
     width: 90vw;
-    margin: 0 auto;
+    margin: 20px auto;
     border-radius: 5px;
     align-self: center;
 }
@@ -136,4 +183,147 @@ nav ol li:hover {
 
 #instructions p {
     padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    border-bottom: 1px solid black;
+}
+
+td {
+    padding-top: 10px;
+    text-align: center;
+}
+
+#gridsex {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+}
+
+#gridsex img {
+    width: 90%;
+}
+
+.container {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #bce7fd;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease;
+}
+
+.container:hover .overlay {
+    bottom: 100%;
+    height: 0;
+}
+
+.text {
+    white-space: nowrap;
+    color: rgb(245, 230, 230);
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+footer img {
+    max-width: 100px;
+}
+
+#fleche1 {
+    position: absolute;
+    padding: 50px;
+    max-width: 150px;
+    transform: rotate(-60deg);
+}
+#fleche2 {
+    position: absolute;
+    top: 350px;
+    left: 100px;
+    max-width: 150px;
+    transform: rotate(-190deg);
+}
+#fleche3 {
+    position: absolute;
+    top: 300px;
+    left: 400px;
+    max-width: 150px;
+    transform: rotate(-140deg);
+}
+#fleche4 {
+    position: absolute;
+    top: 350px;
+    left: 100px;
+    max-width: 150px;
+    transform: rotate(-190deg);
+}
+#fleche5 {
+    position: absolute;
+    top: 350px;
+    left: 100px;
+    max-width: 150px;
+    transform: rotate(-190deg);
+}
+
+.center {
+    margin: auto;
+    display: flex;
+}
+
+.carte {
+    display: inline-block;
+    padding: 10px;
+    margin: 25px auto;
+    max-width: 400px;
+    border-radius: 30px;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    list-style-position: inside;
+    transition: 250ms;
+}
+
+.carte img,
+.carte iframe {
+    max-width: 300px;
+    border-radius: 25px;
+}
+
+.carte:hover {
+    transform: scale(1.02) translate(10px, -10px);
+    box-shadow: -20px 20px 20px 0px rgba(0, 0, 0, 0.2),
+        0 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#lock {
+    position: absolute;
+    width: 6em;
+    transform: translateY(-10px);
 }
