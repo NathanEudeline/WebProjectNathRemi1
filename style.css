@@ -53,6 +53,9 @@ nav ul li {
         display: block;
         padding: 5px;
     }
+    header {
+        min-height: 200px;
+    }
 }
 
 nav ul li a {
@@ -63,6 +66,15 @@ nav ul li a {
     border-radius: 30px;
     background-color: black;
     transition: 500ms;
+}
+
+nav ul li a i {
+    color: whitesmoke;
+}
+nav ul li a:hover i {
+    color: black;
+    transform: scale(0.95);
+    transition-delay: 50ms;
 }
 
 nav ul li a:hover {
@@ -79,44 +91,6 @@ nav ul li a:active {
 nav ul li a.lock:focus {
     background-color: rgb(19, 189, 13);
 }
-/* 
-#logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-#logo a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-#left {
-    justify-content: flex-end;
-    margin: 0;
-    padding: 0;
-}
-
-#right {
-    justify-content: flex-start;
-    padding: 0;
-    margin: 0;
-}
-
-#logo img:hover {
-    transform: scale(1.1);
-}
-
-.logoImg {
-    border-radius: 100%;
-    width: 30%;
-    height: 30%;
-    min-height: 50px;
-    min-width: 50px;
-    background-color: white;
-} */
 
 main {
     margin: 60px;
@@ -134,27 +108,6 @@ main {
     text-align: center;
     font-size: 400%;
 }
-
-/* .rotate {
-    animation: rotation 8s infinite linear;
-    border-radius: 100%;
-    width: 30%;
-    height: 30%;
-    min-height: 50px;
-    min-width: 50px;
-    background-color: lightblue;
-
-    align-items: center;
-}
-
-@keyframes rotation {
-    from {
-        transform: rotate(0deg) scale(0);
-    }
-    to {
-        transform: rotate(359deg) scale(1);
-    }
-} */
 
 #cache:hover #cache-content {
     display: block;
@@ -185,9 +138,14 @@ main {
     padding: 5px;
 }
 
+#tableGPS {
+    display: flex;
+    justify-content: center;
+    border: 0.5rem;
+}
+
 table {
     border-collapse: collapse;
-    width: 100%;
 }
 
 tr {
@@ -195,17 +153,17 @@ tr {
 }
 
 td {
-    padding-top: 10px;
+    padding: 0.4rem;
     text-align: center;
 }
 
-#gridsex {
+#grid_mot {
     display: flex;
     justify-items: center;
     flex-direction: column;
 }
 
-#gridsex img {
+#grid_mot img {
     width: 90%;
 }
 
@@ -258,39 +216,47 @@ footer img {
     max-width: 100px;
 }
 
-#fleche1 {
+[id^="fleche"] {
     position: absolute;
-    padding: 50px;
     max-width: 150px;
+}
+
+#fleche1 {
+    top: 45%;
+    left: 10%;
     transform: rotate(-60deg);
 }
 #fleche2 {
-    position: absolute;
-    top: 350px;
-    left: 100px;
-    max-width: 150px;
+    top: 60%;
+    left: 10%;
     transform: rotate(-190deg);
 }
 #fleche3 {
-    position: absolute;
-    top: 300px;
-    left: 400px;
-    max-width: 150px;
-    transform: rotate(-140deg);
+    top: 60%;
+    left: 30%;
+    transform: rotate(-150deg);
 }
 #fleche4 {
-    position: absolute;
-    top: 350px;
-    left: 100px;
-    max-width: 150px;
-    transform: rotate(-190deg);
+    top: 70%;
+    left: 45%;
+    transform: rotate(110deg);
+    /* filter: invert(100%); */
+}
+#fleche4:hover {
+    cursor: pointer;
+}
+#fleche4:active {
+    transform: rotate(-10deg);
 }
 #fleche5 {
-    position: absolute;
-    top: 350px;
-    left: 100px;
-    max-width: 150px;
-    transform: rotate(-190deg);
+    top: 20%;
+    left: 60%;
+    transform: rotate(-150deg);
+}
+#fleche6 {
+    top: 30%;
+    left: 80%;
+    transform: rotate(-220deg);
 }
 
 .center {
@@ -302,7 +268,7 @@ footer img {
     display: inline-block;
     padding: 10px;
     margin: 25px auto;
-    max-width: 400px;
+    max-width: 300px;
     border-radius: 30px;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: white;
@@ -313,7 +279,16 @@ footer img {
 .carte img,
 .carte iframe {
     max-width: 300px;
+    max-height: auto;
+}
+
+.carte iframe {
     border-radius: 25px;
+}
+
+.carte img {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 
 .carte:hover {
