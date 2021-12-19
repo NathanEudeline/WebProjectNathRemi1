@@ -48,16 +48,6 @@ nav ul li {
     padding: 10px;
 }
 
-@media screen and (max-width: 650px) {
-    nav ul li {
-        display: block;
-        padding: 5px;
-    }
-    header {
-        min-height: 200px;
-    }
-}
-
 nav ul li a {
     display: block;
     color: whitesmoke;
@@ -118,13 +108,8 @@ main {
     z-index: 1;
 }
 
-#custom-bg {
-    background: url("http://vision.gel.ulaval.ca/~jflalonde/cours/1001/h17/tps/tp0/giphy.gif");
-}
-
 #instructions {
     border: 2px solid #202225;
-    width: 90vw;
     margin: 20px auto;
     border-radius: 5px;
     align-self: center;
@@ -137,6 +122,18 @@ main {
 #instructions p {
     padding: 5px;
 }
+
+/* Pour page2.html */
+
+#lock {
+    position: absolute;
+    width: 6em;
+    transform: translateY(-10px);
+}
+
+/* ------------------------------ */
+
+/* Pour hack.html */
 
 #tableGPS {
     display: flex;
@@ -157,15 +154,9 @@ td {
     text-align: center;
 }
 
-#grid_mot {
-    display: flex;
-    justify-items: center;
-    flex-direction: column;
-}
+/* ------------------------------ */
 
-#grid_mot img {
-    width: 90%;
-}
+/* Pour hex.html */
 
 .container {
     position: relative;
@@ -226,49 +217,63 @@ footer img {
     left: 10%;
     transform: rotate(-60deg);
 }
+
 #fleche2 {
     top: 60%;
     left: 10%;
     transform: rotate(-190deg);
 }
+
 #fleche3 {
     top: 60%;
     left: 30%;
     transform: rotate(-150deg);
 }
+
 #fleche4 {
     top: 70%;
     left: 45%;
     transform: rotate(110deg);
     /* filter: invert(100%); */
 }
+
 #fleche4:hover {
     cursor: pointer;
 }
+
 #fleche4:active {
-    transform: rotate(-10deg);
+    transform: rotate(-20deg);
 }
+
 #fleche5 {
     top: 20%;
     left: 60%;
     transform: rotate(-150deg);
 }
+
 #fleche6 {
     top: 30%;
     left: 80%;
     transform: rotate(-220deg);
 }
 
+/* ------------------------------ */
+
+/* Pour about.html et contact.html */
+
 .center {
     margin: auto;
     display: flex;
+    justify-content: center;
 }
 
 .carte {
     display: inline-block;
     padding: 10px;
-    margin: 25px auto;
-    max-width: 300px;
+    margin: 25px;
+    min-width: 300px;
+    max-width: fit-content;
+    height: fit-content;
     border-radius: 30px;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: white;
@@ -276,29 +281,49 @@ footer img {
     transition: 250ms;
 }
 
-.carte img,
-.carte iframe {
-    max-width: 300px;
-    max-height: auto;
+.carte img {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 400px;
+    max-width: 100%;
 }
 
 .carte iframe {
     border-radius: 25px;
+    width: 100%;
 }
-
-.carte img {
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-}
-
 .carte:hover {
     transform: scale(1.02) translate(10px, -10px);
     box-shadow: -20px 20px 20px 0px rgba(0, 0, 0, 0.2),
         0 8px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-#lock {
-    position: absolute;
-    width: 6em;
-    transform: translateY(-10px);
+.center a {
+    color: black;
+    transition: 250ms;
+}
+
+.center a:hover {
+    filter: invert(60%);
+}
+
+/* ------------------------------ */
+
+/* Pour le mode mobile */
+@media screen and (max-width: 650px) {
+    nav ul li {
+        display: block;
+        padding: 5px;
+    }
+    header {
+        min-height: 200px;
+    }
+
+    #lock {
+        opacity: 0;
+    }
+
+    .center {
+        display: block;
+    }
 }
